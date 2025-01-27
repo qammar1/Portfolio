@@ -1,22 +1,35 @@
+"use client";
 import React from "react";
 import { SparklesCore } from "./ui/sparkles";
 
 function Hero() {
   return (
-    // <div className='pb-20 pt-36'>
     <div>
-      <SparklesCore />
-      <div className="h-screen w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+      {/* Sparkles section */}
+      <div className="relative w-full">
+        <SparklesCore />
 
-        <div className="flex justify-center relative my-20 z-10">
-          <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-            <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-              Dynamic web magic with next.js
-            </h2>
-          </div>
+        {/* Content on top of Sparkles */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+        <h2 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+            Dynamic web magic with Next.js
+          </h2>
         </div>
       </div>
+
+      {/* Grid section */}
+    
+
+
+    <div className="h-[50rem] w-full bg-black-200 bg-dot-white/[0.9] relative flex items-center justify-center">
+      {/* Radial gradient for the container to give a faded look */}
+      
+      <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+        Backgrounds
+      </p>
+    </div>
+  
+
     </div>
   );
 }
