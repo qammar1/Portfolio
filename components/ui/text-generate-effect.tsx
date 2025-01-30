@@ -6,16 +6,18 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   words,
   className,
+  wordClassName,  // New prop to apply styles on individual words
   filter = true,
   duration = 0.5,
 }: {
   words: string;
   className?: string;
+  wordClassName?: string;  // For individual word customization
   filter?: boolean;
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
   useEffect(() => {
     animate(
       "span",
@@ -37,7 +39,8 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="text-2xl sm:text-3xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8"
+              // className="text-2xl sm:text-3xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8"
+              className={cn(wordClassName)} // Apply wordClassName here
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
