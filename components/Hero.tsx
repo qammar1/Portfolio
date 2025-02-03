@@ -27,7 +27,7 @@ function Hero() {
             width={200}
             height={200}
             className="rounded-full shadow-[0_8px_15px_rgba(255,255,255,0.5)]"
-            alt="Picture of the author"
+            alt="Qammar's Picture"
           />
         </div>
       </div>
